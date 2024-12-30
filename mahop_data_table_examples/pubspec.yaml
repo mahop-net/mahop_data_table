@@ -1,0 +1,44 @@
+name: mahop_data_table_examples
+description: "Examples for package: mahop_data_table"
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^14.2.7
+  mahop_data_table:
+    path: ../mahop_data_table
+  provider: ^6.1.1
+  intl: ^0.20.0
+  flutter_highlight: ^0.7.0
+  flutter_code_editor: ^0.3.2
+  highlight: ^0.7.0
+  split_view: ^3.2.1
+  window_manager: ^0.4.2
+  decimal: ^3.0.2
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/home01.png
+
+msix_config:
+  display_name: MaHop data table Examples
+  publisher: CN=MaHop Data Table Examples, O=MaHop.Net, C=DE, OID.2.25.675729368913984317654407730594956997722=1
+  publisher_display_name: MaHop.Net
+  identity_name: mahop.net.mahopdatatableexamples
+  msix_version: 0.0.0.1
+  logo_path: .\mahop_logo.png
+  capabilities: internetClient, alpha
+  sign_msix: false
+  
