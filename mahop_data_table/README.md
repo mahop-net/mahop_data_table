@@ -110,9 +110,9 @@ Screenshot of the first sample in the demo app
     // --------------------------------------------
     // - apply needed settings
     // --------------------------------------------
-    final settings = MhItemsViewSettings(rowHeight: 25, headerHeight: 30, displayHeader: true);
+    final settings = MhItemsViewSettings<ExampleItem>(rowHeight: 25, headerHeight: 30, displayHeader: true);
 
-    return MhItemsView(itemsSource: items, columnDefs: columnDefs, settings: settings),
+    return MhItemsView<ExampleItem>(itemsSource: items, columnDefs: columnDefs, settings: settings),
   };
 ```
 

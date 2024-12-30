@@ -1,4 +1,8 @@
 
+## 1.0.4
+* Published: 30. December 2024
+* Created a code repository on GitHub with issues tab for the project: https://github.com/mahop-net/mahop_data_table
+
 ## 1.0.3
 * Published: 29. December 2024
 * Enhaced the basic example in Example.dart file (added a custom column, selection and reorder)
