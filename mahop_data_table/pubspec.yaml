@@ -1,6 +1,6 @@
 name: mahop_data_table
 description: "Flutter Widget to display a DataTable, ListView, TreeView (Pro), TreeListView (Pro),  with many options, editing, advanced drag and drop support and much more."
-version: 1.0.4
+version: 1.0.5
 homepage: https://flutter.mahop.net
 repository: https://github.com/mahop-net/mahop_data_table
 issue_tracker: https://github.com/mahop-net/mahop_data_table/issues
@@ -20,6 +20,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

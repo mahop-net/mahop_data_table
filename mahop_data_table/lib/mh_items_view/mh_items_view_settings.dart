@@ -255,37 +255,37 @@ class MhItemsViewTextSettings {
 
   /// DragAndDrop: The text to be displayed during drag and drop if more than one item is beeing dragged
   /// "$action $draggedItemsText ${state.settings.textSettings.above} ${targetItem.toString()}"
-  /// e.g.: Copy 3 selected items above <widget.item.toString()>
+  /// e.g.: Copy 3 selected items above Item1
   String selectedItems;
 
   /// DragAndDrop: The text to be displayed during drag and drop if more than one item is beeing dragged
   /// "$action $draggedItemsText ${state.settings.textSettings.above} ${targetItem.toString()}"
-  /// Copy 3 selected items above <widget.item.toString()>
-  /// Move <draggedItem.toString()> above <targetItem.toString()>
+  /// Copy 3 selected items above 'widget.item.toString()'
+  /// Move 'draggedItem.toString()' above 'targetItem.toString()'
   String copy;
 
   /// DragAndDrop: The text to be displayed during drag and drop if more than one item is beeing dragged
   /// "$action $draggedItemsText ${state.settings.textSettings.above} ${targetItem.toString()}"
-  /// Copy 3 selected items above <widget.item.toString()>
-  /// Move <draggedItem.toString()> above <targetItem.toString()>
+  /// Copy 3 selected items above 'widget.item.toString()'
+  /// Move 'draggedItem.toString()' above 'targetItem.toString()'
   String move;
 
   /// DragAndDrop: The text to be displayed during drag and drop if more than one item is beeing dragged
   /// "$action $draggedItemsText ${state.settings.textSettings.abbelowove} ${targetItem.toString()}"
-  /// Copy 3 selected items below <widget.item.toString()>
-  /// Move <draggedItem.toString()> below <targetItem.toString()>
+  /// Copy 3 selected items below 'widget.item.toString()'
+  /// Move 'draggedItem.toString()' below 'targetItem.toString()'
   String below;
 
   /// DragAndDrop: The text to be displayed during drag and drop if more than one item is beeing dragged
   /// "$action $draggedItemsText ${state.settings.textSettings.above} ${targetItem.toString()}"
-  /// Copy 3 selected items above <widget.item.toString()>
-  /// Move <draggedItem.toString()> above <targetItem.toString()>
+  /// Copy 3 selected items above 'widget.item.toString()'
+  /// Move 'draggedItem.toString()' above 'targetItem.toString()'
   String above;
 
   /// DragAndDrop: The text to be displayed during drag and drop if more than one item is beeing dragged
   /// "$action $draggedItemsText ${state.settings.textSettings.inside} ${targetItem.toString()}"
-  /// Copy 3 selected items inside <widget.item.toString()>
-  /// Move <draggedItem.toString()> inside <targetItem.toString()>
+  /// Copy 3 selected items inside 'widget.item.toString()'
+  /// Move 'draggedItem.toString()' inside 'targetItem.toString()'
   String inside;
 
   MhItemsViewTextSettings({

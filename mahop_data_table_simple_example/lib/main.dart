@@ -82,7 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // --------------------------------------------
     // - apply settings
     // --------------------------------------------
-    final settings = MhItemsViewSettings<ExampleItem>(
+    MhItemsViewSettings<ExampleItem> settings =
+        MhItemsViewSettings<ExampleItem>(
       rowHeight: 25,
       headerHeight: 30,
       displayHeader: true,

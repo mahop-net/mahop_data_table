@@ -61,7 +61,7 @@ class MhDragState extends ChangeNotifier {
   MhDropModeAllowed dropModeAllowed = MhDropModeAllowed.copyAndMove;
 
   /// Text to be displayed during a drag and drop operation
-  /// holding e.g.: Move <DraggedItemToString> below <TargetItemToString>
+  /// e.g.: Move 'DraggedItem.toString' below 'TargetItem.toString'
   String get displayText {
     if (_dropMode == MhDropMode.notAllowed) {
       return "";
