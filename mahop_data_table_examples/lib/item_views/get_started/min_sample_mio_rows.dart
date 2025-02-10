@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mahop_data_table/mh_items_view/mh_items_view.dart';
 import 'package:mahop_data_table/mh_items_view/mh_items_view_settings.dart';
 
-import '../../main.dart';
 import '../../utils/example_view.dart';
 import '../demo-data/demo_item.dart';
 import '../demo-data/demo_item_generator.dart';

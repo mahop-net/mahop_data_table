@@ -1,0 +1,69 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+  
+    {
+      "name": "mahop_data_table",
+      "cwd": "mahop_data_table",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "mahop_data_table (profile mode)",
+      "cwd": "mahop_data_table",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "mahop_data_table (release mode)",
+      "cwd": "mahop_data_table",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "mahop_data_table_examples",
+      "cwd": "mahop_data_table_examples",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "mahop_data_table_examples (profile mode)",
+      "cwd": "mahop_data_table_examples",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "mahop_data_table_examples (release mode)",
+      "cwd": "mahop_data_table_examples",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "mahop_data_table_simple_example",
+      "cwd": "mahop_data_table_simple_example",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "mahop_data_table_simple_example (profile mode)",
+      "cwd": "mahop_data_table_simple_example",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "mahop_data_table_simple_example (release mode)",
+      "cwd": "mahop_data_table_simple_example",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
