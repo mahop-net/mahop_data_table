@@ -22,6 +22,9 @@ class RenderMhItemsGridViewPort<T> extends RenderTwoDimensionalViewport {
     super.clipBehavior = Clip.hardEdge,
   }) : super(childManager: childManager);
 
+  double _lastHorizontalDimmension = -1;
+  double _lastVerticalDimmension = -1;
+
   @override
   void layoutChildSequence() {
     var state = context.read<MhItemsViewState<T>>();
@@ -197,19 +200,27 @@ class RenderMhItemsGridViewPort<T> extends RenderTwoDimensionalViewport {
       verticalExtent = state.rowTopCache[maxRowIndex] +
           state.settings.getRowHeight!(state.filteredItemsSource[maxRowIndex]);
     }
-    verticalOffset.applyContentDimensions(
-      0.0,
-      clampDouble(
-          verticalExtent - viewportDimension.height, 0.0, double.infinity),
-    );
+    final double verticalDimmension = clampDouble(
+        verticalExtent - viewportDimension.height, 0.0, double.infinity);
+    if (verticalDimmension != _lastVerticalDimmension) {
+      _lastVerticalDimmension = verticalDimmension;
+      verticalOffset.applyContentDimensions(
+        0.0,
+        verticalDimmension,
+      );
+    }
 
     final double horizontalExtent = state.colLeftCache[maxColumnIndex] +
         state.columnDefs[maxColumnIndex].columnWidth;
-    horizontalOffset.applyContentDimensions(
-      0.0,
-      clampDouble(
-          horizontalExtent - viewportDimension.width, 0.0, double.infinity),
-    );
+    final double horizontalDimension = clampDouble(
+        horizontalExtent - viewportDimension.width, 0.0, double.infinity);
+    if (_lastHorizontalDimmension != horizontalDimension) {
+      _lastHorizontalDimmension = horizontalDimension;
+      horizontalOffset.applyContentDimensions(
+        0.0,
+        horizontalDimension,
+      );
+    }
     state.rowWidth = horizontalExtent;
   }
 

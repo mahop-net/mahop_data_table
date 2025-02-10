@@ -369,7 +369,7 @@ class MhItemsViewState<T> {
           }
           break;
       }
-      if (row >= filteredItemsSource.length || row <= 0) {
+      if (row >= filteredItemsSource.length || row < 0) {
         return false;
       }
       item = filteredItemsSource[row];

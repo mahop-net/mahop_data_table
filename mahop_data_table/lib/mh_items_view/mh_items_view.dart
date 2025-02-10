@@ -274,9 +274,9 @@ class _MhItemsViewState<T> extends State<MhItemsView<T>>
   MhItemsViewScrollController itemsViewScrollController =
       MhItemsViewScrollController();
 
-  late ScrollController vertScrollController;
-  late ScrollController horScrollController;
-  late ScrollController horScrollControllerHeader;
+  late final ScrollController vertScrollController = ScrollController();
+  late final ScrollController horScrollController = ScrollController();
+  late final ScrollController horScrollControllerHeader = ScrollController();
 
   @override
   void dragAcceptedFromTarget(
@@ -297,9 +297,9 @@ class _MhItemsViewState<T> extends State<MhItemsView<T>>
   @override
   void initState() {
     super.initState();
-    vertScrollController = ScrollController();
-    horScrollController = ScrollController();
-    horScrollControllerHeader = ScrollController();
+    //vertScrollController = ScrollController();
+    //horScrollController = ScrollController();
+    //horScrollControllerHeader = ScrollController();
   }
 
   @override
@@ -386,13 +386,24 @@ class _MhItemsViewState<T> extends State<MhItemsView<T>>
       };
     }
 
+    //var ignoreScrollEventFromHeader = false;
+
     // Connect ScrollControllers
     horScrollController.addListener(() {
-      horScrollControllerHeader.jumpTo(horScrollController.offset);
+      //ignoreScrollEventFromHeader = true;
+      if (horScrollControllerHeader.offset != horScrollController.offset) {
+        horScrollControllerHeader.jumpTo(horScrollController.offset);
+      }
+      //ignoreScrollEventFromHeader = false;
     });
 
     horScrollControllerHeader.addListener(() {
-      horScrollController.jumpTo(horScrollControllerHeader.offset);
+      // if (ignoreScrollEventFromHeader) {
+      //   return;
+      // }
+      if (horScrollControllerHeader.offset != horScrollController.offset) {
+        horScrollController.jumpTo(horScrollControllerHeader.offset);
+      }
     });
 
     var scrollbar = LayoutBuilder(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mahop_data_table/mh_items_view/mh_items_view.dart';
 import 'package:mahop_data_table/mh_items_view/mh_items_view_settings.dart';
 
+import '../../main.dart';
 import '../../utils/example_view.dart';
 import '../demo-data/demo_item.dart';
 import '../demo-data/demo_item_generator.dart';
@@ -31,13 +32,22 @@ class _MinSampleMioRowsState extends State<MinSampleMioRows> {
         id: "pos",
         header: "Pos",
         columnWidth: 110,
-        buildDisplay: (context, item, displayInfo) => Container(
-            color: displayInfo.rowIsSelected
-                ? Colors.red
-                : item.index % 2 == 0
-                    ? Colors.yellow
-                    : Colors.lightGreen,
-            child: Center(child: Text(item.pos)))));
+        buildDisplay: (context, item, displayInfo) {
+          var isLight = Theme.of(context).brightness == Brightness.light;
+          return Container(
+              color: displayInfo.rowIsSelected
+                  ? isLight
+                      ? Colors.red
+                      : const Color.fromARGB(255, 78, 5, 0)
+                  : item.index % 2 == 0
+                      ? isLight
+                          ? Colors.yellow
+                          : const Color.fromARGB(255, 67, 61, 0)
+                      : isLight
+                          ? Colors.lightGreen
+                          : const Color.fromARGB(255, 34, 63, 0),
+              child: Center(child: Text(item.pos)));
+        }));
     columnDefs.add(MhItemsViewColumnDef<DemoItem>(
         id: "index",
         header: "Index",

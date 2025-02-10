@@ -39,7 +39,7 @@ class _ScrollTestView2State extends State<ScrollTestView2> {
         thickness: 12.0,
         controller: vertScrollController,
         child: TwoDimensionalGridView(
-          diagonalDragBehavior: DiagonalDragBehavior.free,
+          diagonalDragBehavior: DiagonalDragBehavior.none,
           horizontalDetails: ScrollableDetails(
               direction: AxisDirection.right, controller: horScrollController),
           verticalDetails: ScrollableDetails(
@@ -72,13 +72,13 @@ class TwoDimensionalGridView extends TwoDimensionalScrollView {
     super.key,
     super.primary,
     super.mainAxis = Axis.vertical,
-    super.verticalDetails = const ScrollableDetails.vertical(),
-    super.horizontalDetails = const ScrollableDetails.horizontal(),
+    super.verticalDetails,
+    super.horizontalDetails,
     required TwoDimensionalChildBuilderDelegate delegate,
     super.cacheExtent,
     super.diagonalDragBehavior = DiagonalDragBehavior.none,
-    super.dragStartBehavior = DragStartBehavior.start,
-    super.keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
+    super.dragStartBehavior,
+    super.keyboardDismissBehavior,
     super.clipBehavior = Clip.hardEdge,
   }) : super(delegate: delegate);
 
@@ -159,6 +159,9 @@ class RenderTwoDimensionalGridViewport extends RenderTwoDimensionalViewport {
     super.clipBehavior = Clip.hardEdge,
   }) : super(delegate: delegate);
 
+  double _lastHorizontalDimmension = -1;
+  double _lastVerticalDimmension = -1;
+
   @override
   void layoutChildSequence() {
     final double horizontalPixels = horizontalOffset.pixels;
@@ -201,17 +204,27 @@ class RenderTwoDimensionalGridViewport extends RenderTwoDimensionalViewport {
 
     // Set the min and max scroll extents for each axis.
     final double verticalExtent = 200 * (maxRowIndex + 1);
-    verticalOffset.applyContentDimensions(
-      0.0,
-      clampDouble(
-          verticalExtent - viewportDimension.height, 0.0, double.infinity),
-    );
+    final double verticalDimmension = clampDouble(
+        verticalExtent - viewportDimension.height, 0.0, double.infinity);
+    if (verticalDimmension != _lastVerticalDimmension) {
+      _lastVerticalDimmension = verticalDimmension;
+      verticalOffset.applyContentDimensions(
+        0.0,
+        verticalDimmension,
+      );
+    }
+
     final double horizontalExtent = 200 * (maxColumnIndex + 1);
-    horizontalOffset.applyContentDimensions(
-      0.0,
-      clampDouble(
-          horizontalExtent - viewportDimension.width, 0.0, double.infinity),
-    );
+    final double horizontalDimension = clampDouble(
+        horizontalExtent - viewportDimension.width, 0.0, double.infinity);
+    if (_lastHorizontalDimmension != horizontalDimension) {
+      _lastHorizontalDimmension = horizontalDimension;
+      horizontalOffset.applyContentDimensions(
+        0.0,
+        horizontalDimension,
+      );
+    }
+
     // Super class handles garbage collection too!
   }
 }

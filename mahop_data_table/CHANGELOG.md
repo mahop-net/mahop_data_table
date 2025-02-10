@@ -1,4 +1,11 @@
 
+## 1.0.6
+* Published: 9. February 2025
+* Fixed horizontal Scrolling bug if scrolling via Mouse drag
+* Build in workaround for Flutter Bug in TwoDimmensionalScrollView
+* Fixed Bug while editing - It was not possible to jump into the first row with shift+enter
+* Enchanced the samples and cared about theme brigthness in custom cell renderers
+
 ## 1.0.5
 * Published: 8. January 2025
 * Cleaned up lint errors reported by new flutter analysis

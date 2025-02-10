@@ -11,7 +11,11 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-(Last Update of this info: 9th of February 2025)
+(Last Update of this info:  10th of Februar 2025
+
+This is the code for this pub.dev widget: https://pub.dev/packages/mahop_data_table
+
+
 
 ## MaHop DataTable and more - What is included?
 
